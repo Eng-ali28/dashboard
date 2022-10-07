@@ -20,6 +20,45 @@ header aside {
   width: 250px;
   box-shadow: 0px 0px 10px #ccc;
   min-height: 100vh;
+  position: relative;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+}
+header aside .show-control {
+  border-radius: 50%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  color: white;
+  position: absolute;
+  top: 85px;
+  right: -18px;
+  font-size: 18px;
+  background: #dadada;
+  border: none;
+  outline: none;
+}
+header aside .show-control i {
+  padding: 8px;
+  z-index: -1;
+}
+header aside[attr-show="hidden"] {
+  transform: translateX(-230px);
+  -webkit-transform: translateX(-230px);
+  -moz-transform: translateX(-230px);
+  -ms-transform: translateX(-230px);
+  -o-transform: translateX(-230px);
+}
+header aside[attr-show="visible"] {
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -ms-transform: translateX(0px);
+  -o-transform: translateX(0px);
 }
 header aside h1 {
   padding: 0px 20px 20px 20px;
@@ -87,6 +126,11 @@ header nav {
   top: 0;
   right: 0;
   padding: 15px;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
 }
 header nav .info-user {
   display: flex;
@@ -140,4 +184,18 @@ header nav form .input-search ::placeholder {
 header nav form .input-search i {
   color: #ccc;
   font-size: 18px;
+  margin-left: 8px;
+}
+@media (max-width: 992px) {
+  header nav {
+    flex-direction: column-reverse;
+    width: 100% !important;
+  }
+  header nav .info-user {
+    margin-bottom: 30px;
+  }
+  header aside {
+    z-index: 3;
+    background-color: white;
+  }
 }
